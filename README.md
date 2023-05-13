@@ -1,2 +1,1 @@
-# Lion
-Data-Efficient Adversarial Knowledge Distillation of Language Model
+# Lion: Data-Efficient Adversarial Knowledge Distillation of Language Model
