@@ -26,7 +26,7 @@ We will try our best to resopnse to any of your questions and concerns.
 ## Overview
 
 
-## Recovering Lion Weights
+## Recovering Lion weights
 
 
 ## Fine-tuning
