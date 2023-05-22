@@ -11,5 +11,8 @@
 [![Weight Diff License](https://img.shields.io/badge/Weight%20Diff%20License-CC%20By%20NC%204.0-yellow)](https://github.com/tatsu-lab/stanford_alpaca/blob/main/WEIGHT_DIFF_LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/)
 
-**Usage and License Notices**: Like [Alpaca](https://github.com/tatsu-lab/stanford_alpaca), Lion is intended and licensed for research use only. The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes. 
-The weight diff is also CC BY NC 4.0 (allowing only non-commercial use).
+**Usage and License Notices**: Like [Alpaca](https://github.com/tatsu-lab/stanford_alpaca), Lion is intended and licensed for research use only. 
+<!-- The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes.  -->
+<!-- The weight diff is also CC BY NC 4.0 (allowing only non-commercial use). -->
+
+**arXiv preprint**: https://arxiv.org/abs/2211.13873
