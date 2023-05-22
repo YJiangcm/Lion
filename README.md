@@ -45,7 +45,10 @@ python src/weight_diff.py recover --path_raw <path_to_step_1_dir> --path_diff <p
 
 
 ## Inference
-
+For inference and training of Lion, please first install the requirements:
+```bash
+pip install -r requirements.txt
+```
 
 ## Training Process
 Below shows one iteration of our adversarial distillation framework.
