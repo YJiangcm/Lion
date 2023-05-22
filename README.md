@@ -69,10 +69,10 @@ pip install -r requirements.txt
 We provide the decoding script for Lion, which reads a input file and generates corresponding responses for each sample, and finally consolidates them into an output file.
 ```bash
 python src/lion_inference.py \
-  --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
-  --data_dir <path_to_input_json_file> \
-  --output_dir <path_to_output_json_file> \
-  --num_gpus 8
+    --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
+    --data_dir <path_to_input_json_file> \
+    --output_dir <path_to_output_json_file> \
+    --num_gpus 8
 ```
 
 
@@ -83,9 +83,9 @@ Below shows one iteration of our adversarial distillation framework.
 
 ```bash
 python src/chatgpt_inference.py \
-  -q <path_to_json_file_for_the_Train_Pool> \
-  -o <path_to_chatgpt_inference_for_the_Train_Pool> \
-  --api_key <your_openai_api_key>
+    -q <path_to_json_file_for_the_Train_Pool> \
+    -o <path_to_chatgpt_inference_for_the_Train_Pool> \
+    --api_key <your_openai_api_key>
 ```
 
 #### 1.2 Instruction-tuning the student based on the teacher’s response on the Train Pool
@@ -120,37 +120,37 @@ torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
 
 ```bash
 python src/chatgpt_inference.py \
-  -q <path_to_json_file_for_the_Cache_Pool> \
-  -o <path_to_chatgpt_inference_for_the_Cache_Pool> \
-  --api_key <your_openai_api_key>
+    -q <path_to_json_file_for_the_Cache_Pool> \
+    -o <path_to_chatgpt_inference_for_the_Cache_Pool> \
+    --api_key <your_openai_api_key>
 ```
 
 #### 2.2 Acquire the student's response on the Cache Pool
 
 ```bash
 python src/lion_inference.py \
-  --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
-  --data_dir <path_to_json_file_for_the_Cache_Pool> \
-  --output_dir <path_to_lion_inference_for_the_Cache_Pool> \
-  --num_gpus 8
+    --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
+    --data_dir <path_to_json_file_for_the_Cache_Pool> \
+    --output_dir <path_to_lion_inference_for_the_Cache_Pool> \
+    --num_gpus 8
 ```
 
 #### 2.3 Ask the referee to output two scores according to the respose quality of the teacher and the student
 
 ```bash
 python src/chatgpt_referee.py \
-  -a <path_to_chatgpt_inference_for_the_Cache_Pool> <path_to_lion_inference_for_the_Cache_Pool> \
-  -o <path_to_output_review_file> \
-  --api_key <your_openai_api_key>
+    -a <path_to_chatgpt_inference_for_the_Cache_Pool> <path_to_lion_inference_for_the_Cache_Pool> \
+    -o <path_to_output_review_file> \
+    --api_key <your_openai_api_key>
 ```
 
 #### 2.4 Discriminate hard instructions and easy instructions
 
 ```bash
 python src/discrimination.py \
-  --review_path <path_to_output_review_file> \
-  --hard_path <path_to_identified_hard_instructions> \
-  --easy_path <path_to_identified_easy_instructions>
+    --review_path <path_to_output_review_file> \
+    --hard_path <path_to_identified_hard_instructions> \
+    --easy_path <path_to_identified_easy_instructions>
 ```
 
 ### 3. Generation Stage
@@ -159,16 +159,16 @@ Fill the `openai.api_key = "<you_openai_api_key>"` in [src/utils.py](https://git
 
 ```bash
 python -m src/generate_hard_instruction generate_instruction_following_data \
-  --seed_tasks_path <path_to_identified_hard_instructions> \
-  --output_dir <path_to_generated_hard_instructions> \
-  --num_instructions_to_generate 3000
+    --seed_tasks_path <path_to_identified_hard_instructions> \
+    --output_dir <path_to_generated_hard_instructions> \
+    --num_instructions_to_generate 3000
 ```
 #### 3.2 Generate new easy instructions
 ```bash
 python -m src/generate_easy_instruction generate_instruction_following_data \
-  --seed_tasks_path <path_to_identified_easy_instructions> \
-  --output_dir <path_to_generated_easy_instructions> \
-  --num_instructions_to_generate 3000
+    --seed_tasks_path <path_to_identified_easy_instructions> \
+    --output_dir <path_to_generated_easy_instructions> \
+    --num_instructions_to_generate 3000
 ```
 
 ## Evaluation
