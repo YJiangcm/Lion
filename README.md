@@ -23,7 +23,6 @@
 We will try our best to resopnse to any of your questions and concerns.
 - 2023/05/23: We released the code for training and inference.
 
-
 ## Contents 
 
 1. [Overview](#overview) 
