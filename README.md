@@ -201,7 +201,7 @@ of models below.
 
 
 ## Citation
-Please cite the repo if you use the code in this repo.
+Please cite our paper if you use the code in this repo.
 
 ```
 @misc{alpaca,
