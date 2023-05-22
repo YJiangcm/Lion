@@ -41,8 +41,36 @@ The high-level overview of our adversarial distillation framework, where we craf
 
 
 ## Training Porcess
+
 ### Imitation Stage
+```bash
+torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
+    --model_name_or_path <your_path_to_hf_converted_llama_ckpt_and_tokenizer> \
+    --data_path <a_json_file_for_instruction_tuning> \
+    --bf16 True \
+    --output_dir result \
+    --num_train_epochs 3 \
+    --model_max_length 1024 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 8 \
+    --evaluation_strategy "no" \
+    --save_strategy "steps" \
+    --save_steps 500 \
+    --save_total_limit 1 \
+    --learning_rate 2e-5 \
+    --weight_decay 0. \
+    --warmup_ratio 0.03 \
+    --lr_scheduler_type "cosine" \
+    --logging_steps 1 \
+    --fsdp "full_shard auto_wrap" \
+    --fsdp_transformer_layer_cls_to_wrap 'LlamaDecoderLayer' \
+    --tf32 True
+```
+
 ### Discrimination Stage
+
+
 ### Generation Stage
 
 
