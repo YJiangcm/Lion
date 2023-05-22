@@ -44,6 +44,8 @@ The high-level overview of our framework, where we craft a compact Student LLM b
 
 
 ## Evaluation
+
+### Automatic Evaluation with GPT-4
 we leverage GPT-4 to automatically rate the response quality (with scores from 1 to 10) between two models on 80 unseen [Vicuna-Instructions](https://github.com/lm-sys/FastChat/blob/main/fastchat/eval/table/question.jsonl).
 ChatGPT has been chosen as the reference model to estimate the relative capability of diverse LLMs against it. The relative score is reported in percentage, computed as the ratio of the sum of scores.
 
@@ -59,6 +61,10 @@ ChatGPT has been chosen as the reference model to estimate the relative capabili
   <img width="700" height="330" src="https://github.com/YJiangcm/Lion/blob/master/pics/relative_quality_category.jpg">
 </p>
 
+### Human Evaluation with Alignment Criteria
+We employ the alignment criteria proposed by Askell et al. (2021), which define that an assistant is considered aligned if it is characterized by being helpful, honest, and
+harmless (HHH). We performed a human evaluation on 252 [UserOriented-Instructions](https://github.com/yizhongw/self-instruct/blob/main/human_eval/user_oriented_instructions.jsonl). To estimate the won rate, we compare the frequency of won, tie, and lost between each pair
+of models below.
 
 
 ## Citation
