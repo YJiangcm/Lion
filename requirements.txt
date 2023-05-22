@@ -1,0 +1,7 @@
+huggingface-hub>=0.13.4
+transformers>=4.28.1
+torch==1.13.1
+sentencepiece
+tokenizers>=0.13.3
+accelerate
+ray
