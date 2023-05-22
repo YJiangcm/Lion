@@ -44,6 +44,21 @@ The high-level overview of our framework, where we craft a compact Student LLM b
 
 
 ## Evaluation
+we leverage GPT-4 to automatically rate the response quality (with scores from 1 to 10) between two models on 80 unseen [Vicuna-Instructions](https://github.com/lm-sys/FastChat/blob/main/fastchat/eval/table/question.jsonl).
+ChatGPT has been chosen as the reference model to estimate the relative capability of diverse LLMs against it. The relative score is reported in percentage, computed as the ratio of the sum of scores.
+
+**Relative Overall Response Quality**:
+
+<p align="center">
+  <img width="500" height="250" src="https://github.com/YJiangcm/Lion/blob/master/pics/relative_quality_overall.jpg">
+</p>
+
+**Relative Response Quality of Diverse Task Categories**:
+
+<p align="center">
+  <img width="700" height="330" src="https://github.com/YJiangcm/Lion/blob/master/pics/relative_quality_category.jpg">
+</p>
+
 
 
 ## Citation
