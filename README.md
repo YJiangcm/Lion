@@ -89,6 +89,8 @@ python src/chatgpt_inference.py \
 
 #### 1.2 Instruction-tuning the student based on the teacher’s response on the Train Pool
 
+Fine-tuning was conducted on on a machine with 8 A100 80G GPUs.
+
 ```bash
 torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
     --model_name_or_path <path_to_hf_converted_ckpt_and_tokenizer> \
