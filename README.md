@@ -34,3 +34,14 @@ We will try our best to resopnse to any of your questions and concerns.
 
 ## Citation
 Please cite the repo if you use the code in this repo.
+
+```
+@misc{alpaca,
+  author = {Rohan Taori and Ishaan Gulrajani and Tianyi Zhang and Yann Dubois and Xuechen Li and Carlos Guestrin and Percy Liang and Tatsunori B. Hashimoto },
+  title = {Stanford Alpaca: An Instruction-following LLaMA model},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/tatsu-lab/stanford_alpaca}},
+}
+```
