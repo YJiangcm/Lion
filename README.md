@@ -66,6 +66,16 @@ For inference and training of Lion, please first install the requirements:
 pip install -r requirements.txt
 ```
 
+We provide the decoding script for Lion, which reads a input file and generates corresponding responses for each sample, and finally consolidates them into an output file.
+```bash
+python src/lion_inference.py \
+  --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
+  --data_dir <path_to_input_json_file> \
+  --output_dir <path_to_output_json_file> \
+  --num_gpus 8
+```
+
+
 ## Training Process
 Below shows one iteration of our adversarial distillation framework.
 ### 1. Imitation Stage
