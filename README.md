@@ -20,7 +20,7 @@
 
 ## News
 - :pray: Due to the reason that our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions.
-We are happy to accept any questions and feedback :)
+We warmly welcome all inquiries and appreciate your constructive feedback :)
 - 2023/05/23: We released the code for training and inference.
 
 ## Contents 
