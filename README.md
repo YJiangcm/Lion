@@ -31,7 +31,7 @@ We will try our best to resopnse to any of your questions and concerns.
 The high-level overview of our adversarial distillation framework, where we craft a compact Student LLM based on a superior closed-source LLM that serves three roles: the **Teacher**, the **Referee**, and the **Generator**. From left to right, there are three stages in an iteration:  
 1) an _imitation_ stage to align the student’s response with the teacher’s response;  
 2) a _discrimination_ stage to identify hard samples;  
-3) A _generation_ stage to produce new hard samples for escalating the challenges presented to the student model.
+3) a _generation_ stage to produce new hard samples for escalating the challenges presented to the student model.
 
 ## Recovering Lion weights
 
