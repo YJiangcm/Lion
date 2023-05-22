@@ -115,6 +115,15 @@ python src/chatgpt_referee.py \
   --api_key <your_openai_api_key>
 ```
 
+#### 2.4 Discriminate hard instructions and easy instructions
+
+```bash
+python src/discrimination.py \
+  --review_path <path_to_output_review_file> \
+  --hard_path <path_to_identified_hard_instructions> \
+  --easy_path <path_to_identified_easy_instructions>
+```
+
 ### 3. Generation Stage
 Fill the `openai.api_key = "<you_openai_api_key>"` in [src/utils.py](https://github.com/YJiangcm/Lion/blob/master/src/utils.py).
 #### 3.1 Generate new hard instructions
