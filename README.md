@@ -66,6 +66,10 @@ We employ the alignment criteria proposed by Askell et al. (2021), which define 
 harmless (HHH). We performed a human evaluation on 252 [UserOriented-Instructions](https://github.com/yizhongw/self-instruct/blob/main/human_eval/user_oriented_instructions.jsonl). To estimate the won rate, we compare the frequency of won, tie, and lost between each pair
 of models below.
 
+<p align="center">
+  <img width="500" height="300" src="https://github.com/YJiangcm/Lion/blob/master/pics/252task_win.jpg">
+</p>
+
 
 ## Citation
 Please cite the repo if you use the code in this repo.
