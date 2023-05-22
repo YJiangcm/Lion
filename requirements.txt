@@ -6,3 +6,4 @@ tokenizers>=0.13.3
 accelerate
 ray
 rouge_score
+openai
