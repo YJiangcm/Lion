@@ -39,7 +39,7 @@ You can add our delta to the original LLaMA weights to obtain the Lion weights. 
 1. Get the original LLaMA weights in the huggingface format by following the instructions [here](https://huggingface.co/docs/transformers/main/model_doc/llama).
 2. Please download our delta model at the following [link](https://huggingface.co/victor123/WizardLM) 
 3. Use the following scripts to get Lion weights by applying our delta:
-```
+```bash
 python src/weight_diff.py recover --path_raw <path_to_step_1_dir> --path_diff <path_to_step_2_dir> --path_tuned <path_to_store_recovered_weights>
 ```
 
@@ -51,9 +51,16 @@ python src/weight_diff.py recover --path_raw <path_to_step_1_dir> --path_diff <p
 
 ### Imitation Stage
 ```bash
+python src/chatgpt_inference.py \
+  -q <path_to_json_file_for_the_Train_Pool> \
+  -o <path_to_chatgpt_inference_for_the_Train_Pool> \
+  --api_key <your_openai_api_key>
+```
+
+```bash
 torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
-    --model_name_or_path <your_path_to_hf_converted_llama_ckpt_and_tokenizer> \
-    --data_path <a_json_file_for_instruction_tuning> \
+    --model_name_or_path <path_to_hf_converted_llama_ckpt_and_tokenizer> \
+    --data_path <path_to_chatgpt_inference_for_the_Train_Pool> \
     --bf16 True \
     --output_dir result \
     --num_train_epochs 3 \
@@ -76,10 +83,44 @@ torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
 ```
 
 ### Discrimination Stage
+```bash
+python src/chatgpt_inference.py \
+  -q <path_to_json_file_for_the_Cache_Pool> \
+  -o <path_to_chatgpt_inference_for_the_Cache_Pool> \
+  --api_key <your_openai_api_key>
+```
 
+```bash
+python src/lion_inference.py \
+  --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
+  --data_dir <path_to_json_file_for_the_Cache_Pool> \
+  --output_dir <path_to_lion_inference_for_the_Cache_Pool> \
+  --num_gpus 8
+```
+
+```bash
+python src/chatgpt_referee.py \
+  -a <path_to_chatgpt_inference_for_the_Cache_Pool> <path_to_lion_inference_for_the_Cache_Pool> \
+  -o <path_to_output_review_file> \
+  --api_key <your_openai_api_key>
+```
 
 ### Generation Stage
 
+
+```bash
+python -m src/generate_hard_instruction generate_instruction_following_data \
+  --seed_tasks_path <path_to_identified_hard_instructions> \
+  --output_dir <path_to_generated_hard_instructions> \
+  --num_instructions_to_generate 3000
+```
+
+```bash
+python -m src/generate_easy_instruction generate_instruction_following_data \
+  --seed_tasks_path <path_to_identified_easy_instructions> \
+  --output_dir <path_to_generated_easy_instructions> \
+  --num_instructions_to_generate 3000
+```
 
 ## Evaluation
 
