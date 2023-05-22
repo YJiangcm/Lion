@@ -19,8 +19,9 @@
 
 
 ## News
-Due to the reason that our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions.
+- Due to the reason that our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions.
 We will try our best to resopnse to any of your questions and concerns.
+- 
 
 ## Overview
 
