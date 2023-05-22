@@ -36,11 +36,14 @@ The high-level overview of our framework, where we craft a compact Student LLM b
 ## Recovering Lion weights
 
 
-## Fine-tuning
-
-
 
 ## Inference
+
+
+## Training Porcess
+### Imitation Stage
+### Discrimination Stage
+### Generation Stage
 
 
 ## Evaluation
