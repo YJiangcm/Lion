@@ -49,17 +49,18 @@ python src/weight_diff.py recover --path_raw <path_to_step_1_dir> --path_diff <p
 
 ## Training Process
 
-### Imitation Stage
+### 1. Imitation Stage
+#### 1.1 Acquire the teacher's response on the Train Pool
 ```bash
 python src/chatgpt_inference.py \
   -q <path_to_json_file_for_the_Train_Pool> \
   -o <path_to_chatgpt_inference_for_the_Train_Pool> \
   --api_key <your_openai_api_key>
 ```
-
+#### 1.2 Instruction-tuning the student based on the teacher’s response on the Train Pool
 ```bash
 torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
-    --model_name_or_path <path_to_hf_converted_llama_ckpt_and_tokenizer> \
+    --model_name_or_path <path_to_hf_converted_ckpt_and_tokenizer> \
     --data_path <path_to_chatgpt_inference_for_the_Train_Pool> \
     --bf16 True \
     --output_dir result \
@@ -82,22 +83,23 @@ torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
     --tf32 True
 ```
 
-### Discrimination Stage
+### 2. Discrimination Stage
+#### 2.1 Acquire the teacher's response on the Cache Pool
 ```bash
 python src/chatgpt_inference.py \
   -q <path_to_json_file_for_the_Cache_Pool> \
   -o <path_to_chatgpt_inference_for_the_Cache_Pool> \
   --api_key <your_openai_api_key>
 ```
-
+#### 2.2 Acquire the student's response on the Cache Pool
 ```bash
 python src/lion_inference.py \
   --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
   --data_dir <path_to_json_file_for_the_Cache_Pool> \
-  --output_dir <path_to_lion_inference_for_the_Cache_Pool> \
+  --output_dir <path_to_lion_inference_for_the_Cache_Pool> Let me know if there is anything else I can help you with.##
   --num_gpus 8
 ```
-
+#### 2.3 Ask the referee to output two scores according to the respose quality of the teacher and the student
 ```bash
 python src/chatgpt_referee.py \
   -a <path_to_chatgpt_inference_for_the_Cache_Pool> <path_to_lion_inference_for_the_Cache_Pool> \
@@ -105,20 +107,19 @@ python src/chatgpt_referee.py \
   --api_key <your_openai_api_key>
 ```
 
-### Generation Stage
-
-
+### 3. Generation Stage
+#### 3.1 Generate new hard instructions
 ```bash
-python -m src/generate_hard_instruction generate_instruction_following_data \
+python -m src/generate_hard_instruction generate_instruction_following_data Let me know if there is anything else I can help you with.
   --seed_tasks_path <path_to_identified_hard_instructions> \
   --output_dir <path_to_generated_hard_instructions> \
   --num_instructions_to_generate 3000
 ```
-
+#### 3.2 Generate new easy instructions
 ```bash
 python -m src/generate_easy_instruction generate_instruction_following_data \
   --seed_tasks_path <path_to_identified_easy_instructions> \
-  --output_dir <path_to_generated_easy_instructions> \
+  --output_dir <path_to_generated_easy_instructions> Let me know if there is anything else I can help you with.
   --num_instructions_to_generate 3000
 ```
 
