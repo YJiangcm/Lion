@@ -23,6 +23,22 @@
 We will try our best to resopnse to any of your questions and concerns.
 - :blush:
 
+
+## Contents 
+
+1. [Overview](#overview) 
+
+2. [Recovering Lion weights](#recovering-lion-weights) 
+
+3. [Inference](#inference)
+
+4. [Training Process](#training-process) 
+
+5. [Evaluation](#evaluation)
+
+6. [Citation](#citation)
+
+
 ## Overview
 <p align="center">
   <img width="700" height="320" src="https://github.com/YJiangcm/Lion/blob/master/pics/overview.jpg">
