@@ -21,7 +21,7 @@
 ## News
 - :pray: Due to the reason that our team members are perparing for the _PhD Qualifying Exam_, we apologize for any possible delay in responding to your questions.
 We will try our best to resopnse to any of your questions and concerns.
-- 
+- :blush:
 
 ## Overview
 
