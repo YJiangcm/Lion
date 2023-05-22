@@ -24,7 +24,7 @@ We will try our best to resopnse to any of your questions and concerns.
 - :blush:
 
 ## Overview
-<img src="https://github.com/YJiangcm/Lion/blob/master/pics/overview.jpg" width="700" height="320">
+<img src="https://github.com/YJiangcm/Lion/blob/master/pics/overview.jpg" width="700" height="320" div align=center>
 
 
 ## Recovering Lion weights
