@@ -105,10 +105,10 @@ def generate_prompt(instruction, input=None):
     
 def main():
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--model_dir', type=str, help='')
+    parser.add_argument('--model_dir', type=str, help='path_to_hf_converted_lion_ckpt_and_tokenizer')
     parser.add_argument('--data_dir', type=str, help='')
     parser.add_argument('--output_dir', type=str, help='')
-    parser.add_argument('--num_gpus', type=int, default=8, help='')
+    parser.add_argument('--num_gpus', type=int, default=8, help='number of gpus to use')
     parser.add_argument('--load_in_8bit', action='store_true', help='')
 
     args = parser.parse_args()
@@ -124,3 +124,23 @@ def main():
                     
 if __name__ == "__main__":
     main()
+
+
+
+# An example of the data format of 'data_dir' is as follows:
+'''
+[
+    {
+        "instruction": "Give three tips for staying healthy.",
+        "input": "",
+    },
+    {
+        "instruction": "What are the three primary colors?",
+        "input": "",
+    },
+    {
+        "instruction": "Explain why the following fraction is equivalent to 1/4",
+        "input": "4/16",
+    }
+]
+'''
