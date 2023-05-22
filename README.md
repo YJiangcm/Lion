@@ -27,6 +27,10 @@ We will try our best to resopnse to any of your questions and concerns.
 <p align="center">
   <img width="700" height="320" src="https://github.com/YJiangcm/Lion/blob/master/pics/overview.jpg">
 </p>
+The high-level overview of our framework, where we craft a compact Student LLM based on a superior closed-source LLM that serves three roles: the **Teacher**, the **Referee**, and the **Generator**. From left to right, there are three stages in an iteration:  
+1) an imitation stage to align the student’s response with the teacher’s response;  
+2) a discrimination stage to identify hard samples;  
+3) A generation stage to produce new hard samples for escalating the challenges presented to the student model.
 
 ## Recovering Lion weights
 
