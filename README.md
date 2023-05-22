@@ -51,8 +51,8 @@ The high-level overview of our adversarial distillation framework, where we craf
 ## Recovering Lion weights
 We release Lion weights as delta weights to comply with the LLaMA model license.
 You can add our delta to the original LLaMA weights to obtain the Lion weights. Instructions:
-1. Get the original LLaMA weights in the huggingface format by following the instructions [here](https://huggingface.co/docs/transformers/main/model_doc/llama).
-2. Please download our delta model at the following [link](https://huggingface.co/victor123/WizardLM) 
+1. Get the original LLaMA weights in the huggingface format by following the instructions [here](https://huggingface.co/docs/transformers/main/model_doc/llama)
+2. Please download our delta model at the following [link](https://huggingface.co/YuxinJiang/Lion-7B)  
 3. Use the following scripts to get Lion weights by applying our delta:
 ```bash
 python src/weight_diff.py recover --path_raw <path_to_step_1_dir> --path_diff <path_to_step_2_dir> --path_tuned <path_to_store_recovered_weights>
