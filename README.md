@@ -15,7 +15,7 @@
 <!-- The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes.  -->
 <!-- The weight diff is also CC BY NC 4.0 (allowing only non-commercial use). -->
 
-**arXiv preprint**: https://arxiv.org/abs/2211.13873
+**arXiv preprint**: https://arxiv.org/abs/2305.12870
 
 
 ## News
@@ -206,13 +206,13 @@ of models below.
 Please cite our paper if you use the code in this repo.
 
 ```
-@misc{alpaca,
-  author = {Rohan Taori and Ishaan Gulrajani and Tianyi Zhang and Yann Dubois and Xuechen Li and Carlos Guestrin and Percy Liang and Tatsunori B. Hashimoto },
-  title = {Stanford Alpaca: An Instruction-following LLaMA model},
-  year = {2023},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/tatsu-lab/stanford_alpaca}},
+@misc{jiang2023lion,
+      title={Lion: Adversarial Distillation of Closed-Source Large Language Model}, 
+      author={Yuxin Jiang and Chunkit Chan and Mingyang Chen and Wei Wang},
+      year={2023},
+      eprint={2305.12870},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
 
