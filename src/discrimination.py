@@ -35,7 +35,7 @@ def discrinimation(review_path, chatgpt_inference_path, lion_inference_path, har
     hard_instructions = referee[(referee['review_score_diff'] >= 2) & (referee['assist1_score'] >= 7)]
     easy_instructions = referee[(referee['review_score_diff'] < 2) | (referee['assist1_score'] < 7)]
 
-    print(len(hard_instructions), len(easy_instructions))
+    print(f'Number of hard instructions: {len(hard_instructions)}, Number of easy instructions: {len(easy_instructions)}')
 
     # save the identified hard instructions
     hard_instructions = hard_instructions.reset_index(drop=False)
