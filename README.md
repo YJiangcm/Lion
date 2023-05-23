@@ -18,7 +18,7 @@
 **arXiv preprint**: https://arxiv.org/abs/2305.12870
 
 
-## :fire: News
+## News
 - :pray: Since our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions.
 We warmly welcome all inquiries and appreciate your constructive feedback :)
 - **[2023/05/23]** We released the code for training and inference.
