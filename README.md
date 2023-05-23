@@ -208,13 +208,22 @@ of models below.
 Please cite our paper if you use the code in this repo.
 
 ```
-@misc{jiang2023lion,
-      title={Lion: Adversarial Distillation of Closed-Source Large Language Model}, 
-      author={Yuxin Jiang and Chunkit Chan and Mingyang Chen and Wei Wang},
-      year={2023},
-      eprint={2305.12870},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{DBLP:journals/corr/abs-2305-12870,
+  author       = {Yuxin Jiang and
+                  Chunkit Chan and
+                  Mingyang Chen and
+                  Wei Wang},
+  title        = {Lion: Adversarial Distillation of Closed-Source Large Language Model},
+  journal      = {CoRR},
+  volume       = {abs/2305.12870},
+  year         = {2023},
+  url          = {https://doi.org/10.48550/arXiv.2305.12870},
+  doi          = {10.48550/arXiv.2305.12870},
+  eprinttype   = {arXiv},
+  eprint       = {2305.12870},
+  timestamp    = {Mon, 22 May 2023 09:49:16 UTC},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2305-12870.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 ```
 
