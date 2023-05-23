@@ -11,6 +11,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+from utils import get_json_list, get_json_list2
+
 MAX_API_RETRY = 5
 REQ_TIME_GAP = 20
 
@@ -72,19 +74,6 @@ def gen_prompt(ques, input, ans1, ans2):
 
     return prompt
 
-
-def get_json_list(file_path):
-    with open(file_path, 'r') as fcc_file:
-        json_list = json.load(fcc_file)
-    return json_list
-
-def get_json_list2(file_path):
-    file_path = os.path.expanduser(file_path)
-    with open(file_path, 'r') as f:
-        json_list = []
-        for line in f:
-            json_list.append(json.loads(line))
-        return json_list
 
 
 if __name__ == '__main__':

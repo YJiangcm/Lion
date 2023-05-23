@@ -6,6 +6,7 @@ import json
 import os
 import ray
 
+from utils import get_json_list
 
 def disable_torch_init():
     """
@@ -19,8 +20,7 @@ def disable_torch_init():
     
 def run_eval(model_dir, data_dir, output_dir, num_gpus, load_in_8bit):
     # split question file into num_gpus files
-    with open(data_dir, 'r') as fcc_file:
-        ques_jsons = json.load(fcc_file)
+    ques_jsons = get_json_list(data_dir)
 
     chunk_size = len(ques_jsons) // num_gpus
     ans_handles = []

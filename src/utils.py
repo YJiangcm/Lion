@@ -164,3 +164,18 @@ def jload(f, mode="r"):
     jdict = json.load(f)
     f.close()
     return jdict
+
+
+def get_json_list(file_path):
+    with open(file_path, 'r') as fcc_file:
+        json_list = json.load(fcc_file)
+    return json_list
+
+
+def get_json_list2(file_path):
+    file_path = os.path.expanduser(file_path)
+    with open(file_path, 'r') as f:
+        json_list = []
+        for line in f:
+            json_list.append(json.loads(line))
+        return json_list
