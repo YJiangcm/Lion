@@ -128,7 +128,7 @@ def recover(
             "### Instruction:\r\nList three technologies that make life easier.\r\n\r\n### Response:"
         )
         inputs = tokenizer_recovered(input_text, return_tensors="pt")
-        out = model_recovered.generate(inputs=inputs.input_ids, max_new_tokens=100)
+        out = model_recovered.generate(inputs=inputs.input_ids, max_new_tokens=1024)
         output_text = tokenizer_recovered.batch_decode(out, skip_special_tokens=True)[0]
         output_text = output_text[len(input_text) :]
         print(f"Input: {input_text}\nCompletion: {output_text}")
