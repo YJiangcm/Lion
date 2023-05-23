@@ -152,8 +152,10 @@ python src/chatgpt_referee.py \
 ```bash
 python src/discrimination.py \
     --review_path <path_to_output_review_file> \
-    --hard_path <path_to_identified_hard_instructions> \
-    --easy_path <path_to_identified_easy_instructions>
+    --chatgpt_inference_path <path_to_chatgpt_inference_for_the_Cache_Pool> \
+    --lion_inference_path path_to_lion_inference_for_the_Cache_Pool \
+    --hard_save_path <path_to_identified_hard_instructions> \
+    --easy_save_path <path_to_identified_easy_instructions>
 ```
 
 ### 3. Generation Stage
