@@ -243,7 +243,6 @@ Please cite our paper if you use the code in this repo.
   doi          = {10.48550/arXiv.2305.12870},
   eprinttype   = {arXiv},
   eprint       = {2305.12870},
-  timestamp    = {Mon, 22 May 2023 09:49:16 UTC},
   biburl       = {https://dblp.org/rec/journals/corr/abs-2305-12870.bib},
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
