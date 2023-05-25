@@ -23,8 +23,7 @@
 - **[May 25, 2023]** We released an [online demo](https://d80b32150b0c53333d.gradio.live/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
 
-:pray: Since our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions.
-We warmly welcome all inquiries and appreciate your constructive feedback :)
+<!-- :pray: Since our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions. We warmly welcome all inquiries and appreciate your constructive feedback :) -->
 
 ## Contents 
 
