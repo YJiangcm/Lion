@@ -61,7 +61,7 @@ We will provide our latest models for you to try for as long as possible. You ma
 [**Demo Link**](https://d80b32150b0c53333d.gradio.live/) (the UI interface is shown below)
 
 <p align="center">
-  <img width="800" height="350" src="https://github.com/YJiangcm/Lion/blob/master/pics/english_case.png">
+  <img width="800" height="350" src="https://github.com/YJiangcm/Lion/blob/master/pics/english_case2.png">
 </p>
 
 Since the training data are English instruction-following examples, You'd better ask questions in English. However, we found Lion can also understand instructions in other languages to some extent. See the following case:
