@@ -5,7 +5,8 @@
 </p>
 <p align="center">
   <a href="https://arxiv.org/abs/2305.12870">[📄 Paper]</a> | 
-  <a href="https://84bc5e1fdfbb976d51.gradio.live/">[:desktop_computer: Demo]</a> 
+  <a href="https://huggingface.co/YuxinJiang/Lion">[🤗 Lion Weights]</a> |
+  <a href="https://84bc5e1fdfbb976d51.gradio.live/">[:desktop_computer: Demo]</a>
 </p>
 <hr>
 
