@@ -253,6 +253,6 @@ Please cite our paper if you use the code in this repo.
 
 
 ## Disclaimer
-The resources, including code, data, and model weights, associated with this project are restricted for academic research purposes only and cannot be used for commercial purposes. 
+⚠️ Lion is intended and licensed for **research use ONLY**. Commercial use is **strictly prohibited**.
 The content produced by any version of Lion is influenced by uncontrollable variables such as randomness, and therefore, the accuracy of the output cannot be guaranteed by this project. 
 This project does not accept any legal liability for the content of the model output, nor does it assume responsibility for any losses incurred due to the use of associated resources and output results.
