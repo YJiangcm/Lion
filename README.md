@@ -5,7 +5,7 @@
 </p>
 <p align="center">
   <a href="https://arxiv.org/abs/2305.12870">[📄 Paper]</a> | 
-  <a href="https://d80b32150b0c53333d.gradio.live/">[:desktop_computer: Demo]</a> 
+  <a href="https://84bc5e1fdfbb976d51.gradio.live/">[:desktop_computer: Demo]</a> 
 </p>
 <hr>
 
@@ -22,7 +22,7 @@
 
 
 ## News
-- **[May 25, 2023]** We released an [online demo](https://d80b32150b0c53333d.gradio.live/), try our model here!
+- **[May 25, 2023]** We released an [online demo](https://84bc5e1fdfbb976d51.gradio.live/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
 
 <!-- :pray: Since our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions. We warmly welcome all inquiries and appreciate your constructive feedback :) -->
@@ -60,7 +60,7 @@ The high-level overview of our adversarial distillation framework, where we craf
 ## Online Demo
 We will provide our latest models for you to try for as long as possible. You may ask some questions to Lion and we are happy to hear your feedback!
 
-[**Demo Link**](https://d80b32150b0c53333d.gradio.live/) (the UI interface is shown below)
+[**Demo Link**](https://84bc5e1fdfbb976d51.gradio.live/) (the UI interface is shown below)
 
 <p align="center">
   <img width="800" height="350" src="https://github.com/YJiangcm/Lion/blob/master/pics/english_case2.png">
