@@ -62,6 +62,10 @@ We will provide our latest models for you to try for as long as possible. You ma
 
 Since the training data is English instruction-following examples, You'd better ask questions in English. However, we found Lion can also understand instructions in other languages to some extent. See the following case:
 
+<p align="center">
+  <img width="1000" height="430" src="https://github.com/YJiangcm/Lion/blob/master/pics/chinese_case.png">
+</p>
+
 
 ## Recovering Lion weights
 We release Lion weights as delta weights to comply with the LLaMA model license.
