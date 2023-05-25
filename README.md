@@ -18,7 +18,7 @@
 <!-- The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes.  -->
 <!-- The weight diff is also CC BY NC 4.0 (allowing only non-commercial use). -->
 
-**Tuned on 70k instruction-following data, Lion (7B) can achieve 95% capability of ChatGPT!**
+### Tuned on 70k instruction-following data, Lion (7B) can achieve 95% capability of ChatGPT!
 
 
 ## News
