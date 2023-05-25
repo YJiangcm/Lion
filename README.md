@@ -23,6 +23,7 @@
 
 
 ## News
+<!-- - **[May 26, 2023]** We released the model weights. Check out the [7B](https://huggingface.co/YuxinJiang/Lion) model! -->
 - **[May 25, 2023]** We released an [online demo](https://84bc5e1fdfbb976d51.gradio.live/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
 
