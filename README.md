@@ -28,17 +28,19 @@ We warmly welcome all inquiries and appreciate your constructive feedback :)
 
 1. [Overview](#overview) 
 
-2. [Recovering Lion weights](#recovering-lion-weights) 
+2. [Online Demo](#online-demo) 
 
-3. [Inference](#inference)
+3. [Recovering Lion weights](#recovering-lion-weights) 
 
-4. [Training Process](#training-process) 
+4. [Inference](#inference)
 
-5. [Evaluation](#evaluation)
+5. [Training Process](#training-process) 
 
-6. [Citation](#citation)
+6. [Evaluation](#evaluation)
 
-7. [Disclaimer](#disclaimer)
+7. [Citation](#citation)
+
+8. [Disclaimer](#disclaimer)
 
 
 ## Overview
@@ -51,6 +53,15 @@ The high-level overview of our adversarial distillation framework, where we craf
 2) a _discrimination_ stage to identify hard samples;  
 3) a _generation_ stage to produce new hard samples for escalating the challenges presented to the student model.
 
+
+## Online Demo
+We will provide our latest models for you to try for as long as possible. You may ask some questions to Lion and we are happy to hear your feedback!
+
+[**Demo Link**](https://d80b32150b0c53333d.gradio.live/)
+
+Since the training data is English instruction-following examples, You'd better ask questions in English. However, we found Lion can also understand instructions in other languages to some extent. See the following case:
+
+
 ## Recovering Lion weights
 We release Lion weights as delta weights to comply with the LLaMA model license.
 You can add our delta to the original LLaMA weights to obtain the Lion weights. Instructions:
@@ -60,7 +71,6 @@ You can add our delta to the original LLaMA weights to obtain the Lion weights. 
 ```bash
 python src/weight_diff.py recover --path_raw <path_to_step_1_dir> --path_diff <path_to_step_2_dir> --path_tuned <path_to_store_recovered_weights>
 ```
-
 
 ## Inference
 For inference and training of Lion, please first install the requirements:
