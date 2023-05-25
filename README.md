@@ -17,7 +17,7 @@ License: Lion is intended and licensed for research use only.
 
 arXiv: https://arxiv.org/abs/2305.12870
 
-**Tuning on 70k instruction-following data, Lion (7B) can achieve 95% capability of ChatGPT!**
+**Tuned on 70k instruction-following data, Lion (7B) can achieve 95% capability of ChatGPT!**
 
 
 ## News
