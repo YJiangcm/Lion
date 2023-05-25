@@ -19,6 +19,7 @@
 
 **Tuning on 70k instruction-following data, Lion (7B) can achieve 95% capability of ChatGPT!**
 
+
 ## News
 - **[May 25, 2023]** We released an [online demo](https://d80b32150b0c53333d.gradio.live/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
