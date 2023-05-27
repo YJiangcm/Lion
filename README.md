@@ -128,8 +128,8 @@ torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
     --output_dir result \
     --num_train_epochs 3 \
     --model_max_length 1024 \
-    --per_device_train_batch_size 1 \
-    --per_device_eval_batch_size 1 \
+    --per_device_train_batch_size 2 \
+    --per_device_eval_batch_size 2 \
     --gradient_accumulation_steps 8 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
