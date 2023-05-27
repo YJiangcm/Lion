@@ -94,7 +94,7 @@ For inference and training of Lion, please first install the requirements:
 pip install -r requirements.txt
 ```
 
-We provide the decoding script for Lion, which reads a input file and generates corresponding responses for each sample, and finally consolidates them into an output file. **The inference can be runed on a single machine with 16GB GPU.**
+We provide the decoding script for Lion, which reads a input file and generates corresponding responses for each sample, and finally consolidates them into an output file. **It can be run on a single machine with 16GB GPU.**
 ```bash
 python src/lion_inference.py \
     --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
