@@ -100,7 +100,7 @@ python src/lion_inference.py \
     --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
     --data_dir <path_to_input_json_file> \
     --output_dir <path_to_output_json_file> \
-    --num_gpus 8
+    --num_gpus 1
 ```
 
 
