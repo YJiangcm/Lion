@@ -88,13 +88,13 @@ You can add our delta to the original LLaMA weights to obtain the Lion weights. 
 python src/weight_diff.py recover --path_raw huggyllama/llama-7b --path_diff YuxinJiang/Lion --path_tuned <path_to_store_recovered_weights>
 ```
 
-## Inference (can run on a 16 GB GPU)
+## Inference
 For inference and training of Lion, please first install the requirements:
 ```bash
 pip install -r requirements.txt
 ```
 
-We provide the decoding script for Lion, which reads a input file and generates corresponding responses for each sample, and finally consolidates them into an output file.
+We provide the decoding script for Lion, which reads a input file and generates corresponding responses for each sample, and finally consolidates them into an output file. **The inference can be runed on a single machine with 16GB GPU.**
 ```bash
 python src/lion_inference.py \
     --model_dir <path_to_hf_converted_lion_ckpt_and_tokenizer> \
