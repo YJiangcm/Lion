@@ -246,8 +246,9 @@ Please cite our paper if you use the code in this repo.
   year         = {2023},
   url          = {https://doi.org/10.48550/arXiv.2305.12870},
   doi          = {10.48550/arXiv.2305.12870},
-  eprinttype   = {arXiv},
+  eprinttype    = {arXiv},
   eprint       = {2305.12870},
+  timestamp    = {Fri, 26 May 2023 11:29:33 +0200},
   biburl       = {https://dblp.org/rec/journals/corr/abs-2305-12870.bib},
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
