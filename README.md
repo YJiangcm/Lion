@@ -23,6 +23,7 @@
 
 
 ## News
+We are currently working on training larger-sized versions (13B, 33B, and 65B if feasible). Thank you for your patience.
 - **[May 26, 2023]** We released the model weights. Check out the [7B](https://huggingface.co/YuxinJiang/Lion) model!
 - **[May 25, 2023]** We released an [online demo](https://b79eaa18f7e179e9.gradio.app/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
