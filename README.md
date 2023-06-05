@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2305.12870">[📄 Paper]</a> | 
   <a href="https://huggingface.co/YuxinJiang/Lion">[🤗 Lion Weights]</a> |
-  <a href="https://b79eaa18f7e179e9.gradio.app/">[:desktop_computer: Demo]</a>
+  <a href="https://11d02ceace05a04a.gradio.app/">[:desktop_computer: Demo]</a>
 </p>
 <hr>
 
@@ -25,7 +25,7 @@
 ## News
 We are currently working on training larger-sized versions (13B, 33B, and 65B if feasible). Thank you for your patience.
 - **[May 26, 2023]** We released the model weights. Check out the [7B](https://huggingface.co/YuxinJiang/Lion) model!
-- **[May 25, 2023]** We released an [online demo](https://b79eaa18f7e179e9.gradio.app/), try our model here!
+- **[May 25, 2023]** We released an [online demo](https://11d02ceace05a04a.gradio.app/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
 
 <!-- :pray: Since our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions. We warmly welcome all inquiries and appreciate your constructive feedback :) -->
@@ -63,7 +63,7 @@ The high-level overview of our adversarial distillation framework, where we craf
 ## Online Demo
 We will provide our latest models for you to try for as long as possible. You may ask some questions to Lion and we are happy to hear your feedback!
 
-[**Demo Link**](https://b79eaa18f7e179e9.gradio.app/) (the UI interface is shown below)
+[**Demo Link**](https://11d02ceace05a04a.gradio.app/) (the UI interface is shown below)
 
 <p align="center">
   <img width="800" height="350" src="https://github.com/YJiangcm/Lion/blob/master/pics/english_case2.png">
