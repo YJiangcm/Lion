@@ -63,7 +63,7 @@ The high-level overview of our adversarial distillation framework, where we craf
 ## Online Demo
 We will provide our latest models for you to try for as long as possible. You may ask some questions to Lion and we are happy to hear your feedback!
 
-[**Demo Link**](https://11d02ceace05a04a.gradio.app/) (the UI interface is shown below)
+[**Demo Link**](https://11d02ceace05a04a.gradio.app/) (it will expire in 72 hours, so we regularly update the link)
 
 <p align="center">
   <img width="800" height="350" src="https://github.com/YJiangcm/Lion/blob/master/pics/english_case2.png">
