@@ -1,7 +1,3 @@
-"""
-run:
-python -m generate_hard_instruction generate_instruction_following_data --num_instructions_to_generate 3000
-"""
 import time
 import json
 import os
@@ -14,9 +10,10 @@ from multiprocessing import Pool
 import numpy as np
 import tqdm
 from rouge_score import rouge_scorer
-import utils
-
 import fire
+import openai
+
+import utils
 
 
 def encode_prompt(prompt_instructions):
@@ -79,12 +76,15 @@ def generate_instruction_following_data(
     seed_tasks_path=None,
     num_instructions_to_generate=100,
     model_name="gpt-3.5-turbo",
+    api_key=None,
     num_prompt_instructions=1,
     request_batch_size=1,
     temperature=1.0,
     top_p=1.0,
     num_cpus=6,
 ):
+    openai.api_key = api_key
+    
     seed_tasks = [json.loads(l) for l in open(seed_tasks_path, "r")]
     seed_instruction_data = [
         {"instruction": t["instruction"], "input": t["input"], "output": t["assist1"]}
