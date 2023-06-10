@@ -24,6 +24,7 @@
 
 ## News
 We are currently working on training larger-sized versions (13B, 33B, and 65B if feasible). Thank you for your patience.
+- **[June 10, 2023]** We released insturctions for addressing OOM during fine-tuning, check it in [Training Process](#training-process).
 - **[May 26, 2023]** We released the model weights. Check out the [7B](https://huggingface.co/YuxinJiang/Lion) model!
 - **[May 25, 2023]** We released an [online demo](https://c9990e4e5473f0d2.gradio.app/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
@@ -145,33 +146,39 @@ torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
     --fsdp_transformer_layer_cls_to_wrap 'LlamaDecoderLayer' \
     --tf32 True
 ```
-**Addressing OOM using DeepSpeed**
+**Addressing OOM**
 
-DeepSpeed stage-3 (with offload) can at times be more memory efficient than FSDP with offload. Here's an example to use DeepSpeed stage-3 with 8 GPUs with both parameter and optimizer offload:
+Naively, fine-tuning a 7B model requires about 7 x 8 x 2 = 112 GB of VRAM. Commands given above enable parameter sharding, so no redundant model copy is stored on any GPU.
+If you'd like to further reduce the memory footprint, here are some options:
 
-```bash
-deepspeed src/train_deepspeed.py \
-    --model_name_or_path <path_to_hf_converted_ckpt_and_tokenizer> \
-    --data_path <path_to_chatgpt_inference_for_the_Train_Pool> \
-    --output_dir result \
-    --num_train_epochs 3 \
-    --model_max_length 1024 \
-    --per_device_train_batch_size 16 \
-    --per_device_eval_batch_size 1 \
-    --gradient_accumulation_steps 1 \
-    --evaluation_strategy "no" \
-    --save_strategy "steps" \
-    --save_steps 600 \
-    --save_total_limit 1 \
-    --learning_rate 2e-5 \
-    --warmup_ratio 0.03 \
-    --logging_steps 1 \
-    --lr_scheduler_type "cosine" \
-    --report_to "tensorboard" \
-    --gradient_checkpointing True \
-    --deepspeed srcs/configs/deepspeed_config.json \
-    --fp16 True
-```
+- Turn on CPU offload for FSDP with `--fsdp "full_shard auto_wrap offload"`. This saves VRAM at the cost of longer runtime.
+- In our experience, DeepSpeed stage-3 (with offload) can at times be more memory efficient than FSDP with offload. Here's an example to use DeepSpeed stage-3 with 8 GPUs with both parameter and optimizer offload:
+
+  ```bash
+  deepspeed src/train_deepspeed.py \
+      --model_name_or_path <path_to_hf_converted_ckpt_and_tokenizer> \
+      --data_path <path_to_chatgpt_inference_for_the_Train_Pool> \
+      --output_dir result \
+      --num_train_epochs 3 \
+      --model_max_length 1024 \
+      --per_device_train_batch_size 16 \
+      --per_device_eval_batch_size 1 \
+      --gradient_accumulation_steps 1 \
+      --evaluation_strategy "no" \
+      --save_strategy "steps" \
+      --save_steps 600 \
+      --save_total_limit 1 \
+      --learning_rate 2e-5 \
+      --warmup_ratio 0.03 \
+      --logging_steps 1 \
+      --lr_scheduler_type "cosine" \
+      --report_to "tensorboard" \
+      --gradient_checkpointing True \
+      --deepspeed srcs/configs/deepspeed_config.json \
+      --fp16 True
+  ```
+  - The DeepSpeed library also provides some [helpful functions](https://deepspeed.readthedocs.io/en/latest/memory.html) to estimate memory usage. 
+- [LoRA](https://arxiv.org/abs/2106.09685) fine-tunes low-rank slices of the query, key, and value embedding heads. This can reduce the total memory footprint from 112GB to about 7x4=28GB. We may release our re-implemention of this in the future, but for now the [peft](https://github.com/huggingface/peft) codebase can be a useful resource.
 
 ### 2. Discrimination Stage
 #### 2.1 Acquire the teacher's response on the Cache Pool
