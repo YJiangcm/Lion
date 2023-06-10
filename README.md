@@ -145,6 +145,33 @@ torchrun --nproc_per_node=8 --master_port=<your_random_port> src/train.py \
     --fsdp_transformer_layer_cls_to_wrap 'LlamaDecoderLayer' \
     --tf32 True
 ```
+**Addressing OOM using DeepSpeed**
+
+DeepSpeed stage-3 (with offload) can at times be more memory efficient than FSDP with offload. Here's an example to use DeepSpeed stage-3 with 8 GPUs with both parameter and optimizer offload:
+
+```bash
+deepspeed src/train_deepspeed.py \
+    --model_name_or_path <path_to_hf_converted_ckpt_and_tokenizer> \
+    --data_path <path_to_chatgpt_inference_for_the_Train_Pool> \
+    --output_dir result \
+    --num_train_epochs 3 \
+    --model_max_length 1024 \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 1 \
+    --evaluation_strategy "no" \
+    --save_strategy "steps" \
+    --save_steps 600 \
+    --save_total_limit 1 \
+    --learning_rate 2e-5 \
+    --warmup_ratio 0.03 \
+    --logging_steps 1 \
+    --lr_scheduler_type "cosine" \
+    --report_to "tensorboard" \
+    --gradient_checkpointing True \
+    --deepspeed srcs/configs/deepspeed_config.json \
+    --fp16 True
+```
 
 ### 2. Discrimination Stage
 #### 2.1 Acquire the teacher's response on the Cache Pool
@@ -187,21 +214,23 @@ python src/discrimination.py \
 ```
 
 ### 3. Generation Stage
-Fill the `openai.api_key = "<you_openai_api_key>"` in [src/utils.py](https://github.com/YJiangcm/Lion/blob/master/src/utils.py).
+
 #### 3.1 Generate new hard instructions
 
 ```bash
 python -m src/generate_hard_instruction generate_instruction_following_data \
     --seed_tasks_path <path_to_identified_hard_instructions> \
     --output_dir <path_to_generated_hard_instructions> \
-    --num_instructions_to_generate 3000
+    --num_instructions_to_generate 3000 \
+    --api_key <your_openai_api_key>
 ```
 #### 3.2 Generate new easy instructions
 ```bash
 python -m src/generate_easy_instruction generate_instruction_following_data \
     --seed_tasks_path <path_to_identified_easy_instructions> \
     --output_dir <path_to_generated_easy_instructions> \
-    --num_instructions_to_generate 3000
+    --num_instructions_to_generate 3000 \
+    --api_key <your_openai_api_key>
 ```
 
 ## Evaluation
