@@ -14,8 +14,6 @@ import copy
 
 StrOrOpenAIObject = Union[str, openai_object.OpenAIObject]
 
-openai.api_key = "<you_openai_api_key>"
-
 @dataclasses.dataclass
 class OpenAIDecodingArguments(object):
     max_tokens: int = 1800
