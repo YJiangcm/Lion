@@ -71,7 +71,7 @@ if __name__ == '__main__':
     parser.add_argument('-q', '--insturction-input-file')
     parser.add_argument('-o', '--output-inference-file')
     parser.add_argument('--api_key', type=str)
-    parser.add_argument('--max-tokens', type=int, default=2048, help='maximum number of tokens produced in the output')
+    parser.add_argument('--max-tokens', type=int, default=1024, help='maximum number of tokens produced in the output')
     parser.add_argument('--recheck', action='store_true', default=False)
     args = parser.parse_args()
 
