@@ -91,16 +91,23 @@ def get_model_answers(model_dir, question_jsons, load_in_8bit):
 def generate_prompt(instruction, input=None):
     if input:
         return f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
 ### Instruction:
 {instruction}
+
 ### Input:
 {input}
-### Response:"""
+
+### Response:
+"""
     else:
         return f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
 ### Instruction:
 {instruction}
-### Response:"""
+
+### Response:
+"""
     
     
 def main():
