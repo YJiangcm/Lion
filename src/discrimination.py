@@ -29,11 +29,11 @@ def discrinimation(review_path, chatgpt_inference_path, lion_inference_path, har
                             'review_score_diff': review_score_diff,
                             })
 
-    referee = referee.sort_values(by=['review_score_diff', 'assist1_score'], ascending=False)
+    referee = referee.sort_values(by=['review_score_diff'], ascending=False)
     referee = referee.reset_index(drop=False)
 
-    hard_instructions = referee[(referee['review_score_diff'] >= 2) & (referee['assist1_score'] >= 7)]
-    easy_instructions = referee[(referee['review_score_diff'] < 2) | (referee['assist1_score'] < 7)]
+    hard_instructions = referee[referee['review_score_diff'] >= 1]
+    easy_instructions = referee[referee['review_score_diff'] < 1]
 
     print(f'Number of hard instructions: {len(hard_instructions)}, Number of easy instructions: {len(easy_instructions)}')
 
