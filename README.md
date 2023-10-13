@@ -236,6 +236,7 @@ python src/discrimination.py \
 ```bash
 python -m src/generate_hard_instruction generate_instruction_following_data \
     --seed_tasks_path <path_to_identified_hard_instructions> \
+    --all_tasks_path <path_to_json_file_for_the_Cache_Pool> \
     --output_dir <path_to_generated_hard_instructions> \
     --num_instructions_to_generate 3000 \
     --api_key <your_openai_api_key>
@@ -244,6 +245,7 @@ python -m src/generate_hard_instruction generate_instruction_following_data \
 ```bash
 python -m src/generate_easy_instruction generate_instruction_following_data \
     --seed_tasks_path <path_to_identified_easy_instructions> \
+    --all_tasks_path <path_to_json_file_for_the_Cache_Pool> \
     --output_dir <path_to_generated_easy_instructions> \
     --num_instructions_to_generate 3000 \
     --api_key <your_openai_api_key>
