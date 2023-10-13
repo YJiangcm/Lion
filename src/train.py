@@ -5,8 +5,6 @@ from typing import Dict, Optional, Sequence
 
 import torch
 import transformers
-import io
-import json
 from torch.utils.data import Dataset
 from transformers import Trainer
 
@@ -19,13 +17,9 @@ DEFAULT_BOS_TOKEN = "<s>"
 DEFAULT_UNK_TOKEN = "<unk>"
 PROMPT_DICT = {
     "prompt_input": (
-        "Below is an instruction that describes a task, paired with an input that provides further context. "
-        "Write a response that appropriately completes the request.\n\n"
         "### Instruction:\n{instruction}\n\n### Input:\n{input}\n\n### Response:\n"
     ),
     "prompt_no_input": (
-        "Below is an instruction that describes a task. "
-        "Write a response that appropriately completes the request.\n\n"
         "### Instruction:\n{instruction}\n\n### Response:\n"
     ),
 }
@@ -175,6 +169,31 @@ def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer, dat
     train_dataset = SupervisedDataset(tokenizer=tokenizer, data_path=data_args.data_path)
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     return dict(train_dataset=train_dataset, eval_dataset=None, data_collator=data_collator)
+
+
+###############################################################################################
+# to reduce the GPU Memory-Usage
+# class CustomTrainer(Trainer):
+#     def save_model(self, output_dir: Optional[str] = None, _internal_call: bool = False):
+#         if self.fsdp is not None:
+#             if output_dir is None:
+#                 output_dir = self.args.output_dir
+#             from torch.distributed.fsdp import (
+#                 FullyShardedDataParallel as FSDP,
+#                 FullStateDictConfig,
+#                 StateDictType,
+#             )
+#             save_policy = FullStateDictConfig(offload_to_cpu=True, rank0_only=True)
+#             with FSDP.state_dict_type(self.model, StateDictType.FULL_STATE_DICT, save_policy):
+#                 cpu_state_dict = self.model.state_dict()
+#             if self.args.should_save:
+#                 self._save(output_dir, state_dict=cpu_state_dict)  # noqa
+#             # Push to the Hub when `save_model` is called by the user.
+#             if self.args.push_to_hub and not _internal_call:
+#                 self.push_to_hub(commit_message="Model save")
+#         else:
+#             super().save_model(output_dir, _internal_call)
+###############################################################################################
     
 
 def train():
@@ -211,7 +230,18 @@ def train():
 
     data_module = make_supervised_data_module(tokenizer=tokenizer, data_args=data_args)
     
-   # Tell Trainer not to attempt DataParallel
+    # # replace Trainer
+    # trainer = CustomTrainer(model=model, tokenizer=tokenizer, args=training_args, **data_module)
+    # if training_args.resume_from_checkpoint:
+    #     trainer.train(resume_from_checkpoint=True)
+    # else:
+    #     trainer.train()
+    # trainer.save_state()
+    # print("ready to save model")
+    # trainer.save_model(output_dir=training_args.output_dir)
+
+
+    #Tell Trainer not to attempt DataParallel
     model.is_parallelizable = True
     model.model_parallel = True
 
