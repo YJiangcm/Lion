@@ -9,17 +9,11 @@ from multiprocessing import Pool
 import numpy as np
 import tqdm
 from rouge_score import rouge_scorer
-from . import utils
+import utils
+from utils import get_json_list
 
 import fire
 import openai
-
-
-
-def get_json_list(file_path):
-    with open(file_path, 'r') as fcc_file:
-        json_list = json.load(fcc_file)
-    return json_list
 
 
 def encode_prompt(prompt_instructions):
