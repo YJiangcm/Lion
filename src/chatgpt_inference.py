@@ -10,6 +10,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+from utils import get_json_list
+
 MAX_API_RETRY = 5
 REQ_TIME_GAP = 20
 
@@ -48,11 +50,6 @@ def generate_prompt(instruction):
 ### Response:
 """
 
-
-def get_json_list(file_path):
-    with open(file_path, 'r') as fcc_file:
-        json_list = json.load(fcc_file)
-    return json_list
 
 
 if __name__ == '__main__':
