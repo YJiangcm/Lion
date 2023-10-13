@@ -6,7 +6,6 @@ import json
 import os
 import ray
 
-from utils import get_json_list
 
 def disable_torch_init():
     """
@@ -20,7 +19,8 @@ def disable_torch_init():
     
 def run_eval(model_dir, data_dir, output_dir, num_gpus, load_in_8bit):
     # split question file into num_gpus files
-    ques_jsons = get_json_list(data_dir)
+    with open(data_dir, 'r') as fcc_file:
+        ques_jsons = json.load(fcc_file)
 
     chunk_size = len(ques_jsons) // num_gpus
     ans_handles = []
@@ -59,8 +59,7 @@ def get_model_answers(model_dir, question_jsons, load_in_8bit):
     ans_jsons = []
     for _, line in enumerate(tqdm(question_jsons)):
         instruction = line['instruction']
-        ipt = line['input']
-        prompt = generate_prompt(instruction, ipt)
+        prompt = generate_prompt(instruction)
         inputs = tokenizer(prompt, return_tensors="pt")
         input_ids = inputs["input_ids"].cuda() # these are integers encoded from words
         generation_config = GenerationConfig(
@@ -81,25 +80,14 @@ def get_model_answers(model_dir, question_jsons, load_in_8bit):
         ans_jsons.append(
             {
                 "instruction": instruction,
-                "input": ipt,
                 "output": output,
             }
         )
     return ans_jsons
            
 
-def generate_prompt(instruction, input=None):
-    if input:
-        return f"""### Instruction:
-{instruction}
-
-### Input:
-{input}
-
-### Response:
-"""
-    else:
-        return f"""### Instruction:
+def generate_prompt(instruction):
+    return f"""### Instruction:
 {instruction}
 
 ### Response:
@@ -108,10 +96,10 @@ def generate_prompt(instruction, input=None):
     
 def main():
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--model_dir', type=str, help='path_to_hf_converted_lion_ckpt_and_tokenizer')
+    parser.add_argument('--model_dir', type=str, help='')
     parser.add_argument('--data_dir', type=str, help='')
     parser.add_argument('--output_dir', type=str, help='')
-    parser.add_argument('--num_gpus', type=int, default=8, help='number of gpus to use')
+    parser.add_argument('--num_gpus', type=int, default=8, help='')
     parser.add_argument('--load_in_8bit', action='store_true', help='')
 
     args = parser.parse_args()
@@ -127,23 +115,3 @@ def main():
                     
 if __name__ == "__main__":
     main()
-
-
-
-# An example of the data format of 'data_dir' is as follows:
-'''
-[
-    {
-        "instruction": "Give three tips for staying healthy.",
-        "input": "",
-    },
-    {
-        "instruction": "What are the three primary colors?",
-        "input": "",
-    },
-    {
-        "instruction": "Explain why the following fraction is equivalent to 1/4",
-        "input": "4/16",
-    }
-]
-'''
