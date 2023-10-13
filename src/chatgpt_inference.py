@@ -27,7 +27,7 @@ def get_eval(user_prompt: str, max_tokens: int, api_key: str):
                 temperature=0.7,
                 messages=[{
                     'role': 'system',
-                    'content': "You are a helpful assistant.",
+                    'content': "You are a helpful assistant that generates a response to a given task instruction.",
                 }, {
                     'role': 'user',
                     'content': user_prompt,
@@ -45,9 +45,7 @@ def get_eval(user_prompt: str, max_tokens: int, api_key: str):
 
 def generate_prompt(instruction, input=None):
     if input:
-        return f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
-
-### Instruction:
+        return f"""### Instruction:
 {instruction}
 
 ### Input:
@@ -56,9 +54,7 @@ def generate_prompt(instruction, input=None):
 ### Response:
 """
     else:
-        return f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
-
-### Instruction:
+        return f"""### Instruction:
 {instruction}
 
 ### Response:
@@ -143,4 +139,3 @@ if __name__ == '__main__':
                 new_question_idx_list.append(idx)
 
         ray.shutdown()
-    
