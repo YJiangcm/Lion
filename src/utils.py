@@ -30,7 +30,7 @@ def openai_completion(
     prompts: Union[str, Sequence[str], Sequence[Dict[str, str]], Dict[str, str]],
     decoding_args: OpenAIDecodingArguments,
     model_name="gpt-3.5-turbo",
-    sleep_time=0,
+    sleep_time=20,
     batch_size=1,
     max_instances=sys.maxsize,
     max_batches=sys.maxsize,
