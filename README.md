@@ -1,4 +1,4 @@
-# Lion: Adversarial Distillation of Closed-Source Large Language Model
+# Lion: Adversarial Distillation of Proprietary Large Language Models
 
 <p align="center" width="100%">
   <a ><img src="pics/Lion.jpg" alt="Lion" style="width: 20%; min-width: 200px; display: block; margin: auto;"></a>
@@ -29,7 +29,6 @@ We are currently working on training larger-sized versions (13B, 33B, and 65B if
 - **[May 25, 2023]** We released an [online demo](https://7fc72e99b01b79af.gradio.app/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
 
-<!-- :pray: Since our team members are perparing for the PhD Qualifying Exam, we apologize for any possible delay in responding to your questions. We warmly welcome all inquiries and appreciate your constructive feedback :) -->
 
 ## Contents 
 
@@ -202,10 +201,19 @@ python src/lion_inference.py \
 
 #### 2.3 Ask the referee to output two scores according to the respose quality of the teacher and the student
 
+To mitigate the position bias of the LLM referee, we conduct two runs by exchanging the positions of the teacher's response and the student's response.
+
 ```bash
 python src/chatgpt_referee.py \
     -a <path_to_chatgpt_inference_for_the_Cache_Pool> <path_to_lion_inference_for_the_Cache_Pool> \
-    -o <path_to_output_review_file> \
+    -o <path_to_output_review_chatgpt_lion_file> \
+    --api_key <your_openai_api_key>
+```
+
+```bash
+python src/chatgpt_referee.py \
+    -a <path_to_lion_inference_for_the_Cache_Pool> <path_to_chatgpt_inference_for_the_Cache_Pool> \
+    -o <path_to_output_review_lion_chatgpt_file> \
     --api_key <your_openai_api_key>
 ```
 
@@ -213,7 +221,8 @@ python src/chatgpt_referee.py \
 
 ```bash
 python src/discrimination.py \
-    --review_path <path_to_output_review_file> \
+    --review12_path <path_to_output_review_chatgpt_lion_file> \
+    --review21_path <path_to_output_review_lion_chatgpt_file> \
     --chatgpt_inference_path <path_to_chatgpt_inference_for_the_Cache_Pool> \
     --lion_inference_path <path_to_lion_inference_for_the_Cache_Pool> \
     --hard_save_path <path_to_identified_hard_instructions> \
