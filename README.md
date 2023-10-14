@@ -1,4 +1,4 @@
-# Lion: Adversarial Distillation of Proprietary Large Language Models
+# Lion: Adversarial Distillation of Proprietary Large Language Models (EMNLP 2023)
 
 <p align="center" width="100%">
   <a ><img src="pics/Lion.jpg" alt="Lion" style="width: 20%; min-width: 200px; display: block; margin: auto;"></a>
