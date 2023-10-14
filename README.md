@@ -5,7 +5,7 @@
 </p>
 <p align="center">
   <a href="https://arxiv.org/abs/2305.12870">[📄 Paper]</a> | 
-  <a href="https://huggingface.co/YuxinJiang/Lion">[🤗 Lion Weights]</a>
+  <a href="https://huggingface.co/YuxinJiang/lion-7b">[🤗 Lion Weights]</a>
   <!-- <a href="https://7fc72e99b01b79af.gradio.app/">[:desktop_computer: Demo]</a> -->
 </p>
 <hr>
@@ -25,7 +25,7 @@
 ## News
 - **[October 8, 2023]** Our paper has been accepted to EMNLP 2023.
 - **[June 10, 2023]** We released insturctions for addressing OOM during fine-tuning, check it in [Training Process](#training-process).
-- **[May 26, 2023]** We released the model weights. Check out the [7B](https://huggingface.co/YuxinJiang/Lion) model!
+- **[May 26, 2023]** We released the model weights. Check out the [7B](https://huggingface.co/YuxinJiang/lion-7b) model!
 - **[May 25, 2023]** We released an [online demo](https://7fc72e99b01b79af.gradio.app/), try our model here!
 - **[May 23, 2023]** We released the code for training and inference.
 
@@ -79,14 +79,14 @@ Since the training data are English instruction-following examples, You'd better
 ## Recovering Lion weights
 We release Lion weights as delta weights to comply with the LLaMA model license.
 
-- [Lion-7B (delta weights)](https://huggingface.co/YuxinJiang/Lion)
+- [Lion-7B (delta weights)](https://huggingface.co/YuxinJiang/lion-7b)
 
 You can add our delta to the original LLaMA weights to obtain the Lion weights. Instructions:
 1. Get the original LLaMA weights in the huggingface format by following the instructions [here](https://huggingface.co/docs/transformers/main/model_doc/llama)
-2. Please download our delta model from [Hugging Face](https://huggingface.co/YuxinJiang/Lion)  
+2. Please download our delta model from [Hugging Face](https://huggingface.co/YuxinJiang/lion-7b)  
 3. Use the following scripts to get Lion weights by applying our delta:
 ```bash
-python src/weight_diff.py recover --path_raw huggyllama/llama-7b --path_diff YuxinJiang/Lion --path_tuned <path_to_store_recovered_weights>
+python src/weight_diff.py recover --path_raw huggyllama/llama-7b --path_diff YuxinJiang/lion-7b --path_tuned <path_to_store_recovered_weights>
 ```
 
 ## Inference
