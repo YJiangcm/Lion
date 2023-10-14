@@ -19,7 +19,7 @@
 <!-- The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes.  -->
 <!-- The weight diff is also CC BY NC 4.0 (allowing only non-commercial use). -->
 
-#### Tuned on 70k instruction-following data, Lion (7B) can achieve 95% capability of ChatGPT!
+<!-- #### Tuned on 70k instruction-following data, Lion (7B) can achieve 95% capability of ChatGPT! -->
 
 
 ## News
@@ -253,7 +253,7 @@ python -m src/generate_easy_instruction generate_instruction_following_data \
 
 ## Evaluation
 
-### Automatic Evaluation with GPT-4
+### Results for Open-ended Generation Dataset
 we leverage GPT-4 to automatically rate the response quality (with scores from 1 to 10) between two models on 80 unseen [Vicuna-Instructions](https://github.com/lm-sys/FastChat/blob/main/fastchat/eval/table/question.jsonl).
 ChatGPT has been chosen as the reference model to estimate the relative capability of diverse LLMs against it. The relative score is reported in percentage, computed as the ratio of the sum of scores.
 
@@ -269,14 +269,8 @@ ChatGPT has been chosen as the reference model to estimate the relative capabili
   <img width="700" height="330" src="https://github.com/YJiangcm/Lion/blob/master/pics/relative_quality_category.jpg">
 </p>
 
-### Human Evaluation with Alignment Criteria
-We employ the alignment criteria proposed by Askell et al. (2021), which define that an assistant is considered aligned if it is characterized by being helpful, honest, and
-harmless (HHH). We performed a human evaluation on 252 [UserOriented-Instructions](https://github.com/yizhongw/self-instruct/blob/main/human_eval/user_oriented_instructions.jsonl). To estimate the won rate, we compare the frequency of won, tie, and lost between each pair
-of models below.
+### Results for Reasoning Dataset
 
-<p align="center">
-  <img width="500" height="300" src="https://github.com/YJiangcm/Lion/blob/master/pics/252task_win.jpg">
-</p>
 
 
 ## Citation
