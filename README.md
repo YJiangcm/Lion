@@ -254,17 +254,16 @@ python -m src/generate_easy_instruction generate_instruction_following_data \
 ## Evaluation
 
 ### Results for Open-ended Generation Dataset
-we leverage GPT-4 to automatically rate the response quality (with scores from 1 to 10) between two models on 80 unseen [Vicuna-Instructions](https://github.com/lm-sys/FastChat/blob/main/fastchat/eval/table/question.jsonl).
-ChatGPT has been chosen as the reference model to estimate the relative capability of diverse LLMs against it. The relative score is reported in percentage, computed as the ratio of the sum of scores.
+We leverage GPT-4 to automatically assess the quality of responses (rated on a scale of 1 to 10) between a reference model (ChatGPT) and a candidate model. Subsequently, we calculate the candidate model’s performance as the percentage of the total score it achieves compared to the reference model.
 
 <p align="center">
-  <img width="500" height="750" src="https://github.com/YJiangcm/Lion/blob/master/pics/open_ended_generation.png">
+  <img width="330" height="500" src="https://github.com/YJiangcm/Lion/blob/master/pics/open_ended_generation.png">
 </p>
 
 
 ### Results for Reasoning Dataset
 <p align="center">
-  <img width="700" height="800" src="https://github.com/YJiangcm/Lion/blob/master/pics/reasoning.png">
+  <img width="700" height="780" src="https://github.com/YJiangcm/Lion/blob/master/pics/reasoning.png">
 </p>
 
 
