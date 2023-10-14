@@ -263,7 +263,7 @@ We leverage GPT-4 to automatically assess the quality of responses (rated on a s
 
 ### Results for Reasoning Dataset
 <p align="center">
-  <img width="700" height="780" src="https://github.com/YJiangcm/Lion/blob/master/pics/reasoning.png">
+  <img width="600" height="670" src="https://github.com/YJiangcm/Lion/blob/master/pics/reasoning.png">
 </p>
 
 
