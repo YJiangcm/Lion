@@ -23,7 +23,7 @@
 
 
 ## News
-We are currently working on training larger-sized versions (13B, 33B, and 65B if feasible). Thank you for your patience.
+- **[October 8, 2023]** Our paper has been accepted to EMNLP 2023.
 - **[June 10, 2023]** We released insturctions for addressing OOM during fine-tuning, check it in [Training Process](#training-process).
 - **[May 26, 2023]** We released the model weights. Check out the [7B](https://huggingface.co/YuxinJiang/Lion) model!
 - **[May 25, 2023]** We released an [online demo](https://7fc72e99b01b79af.gradio.app/), try our model here!
