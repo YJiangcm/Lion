@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2305.12870">[📄 Paper]</a> | 
   <a href="https://huggingface.co/YuxinJiang/Lion">[🤗 Lion Weights]</a> |
-  <a href="https://7fc72e99b01b79af.gradio.app/">[:desktop_computer: Demo]</a>
+  <!-- <a href="https://7fc72e99b01b79af.gradio.app/">[:desktop_computer: Demo]</a> -->
 </p>
 <hr>
 
@@ -34,19 +34,19 @@
 
 1. [Overview](#overview) 
 
-2. [Online Demo](#online-demo) 
+<!-- 2. [Online Demo](#online-demo)  -->
 
-3. [Recovering Lion weights](#recovering-lion-weights) 
+2. [Recovering Lion weights](#recovering-lion-weights) 
 
-4. [Inference](#inference)
+3. [Inference](#inference)
 
-5. [Training Process](#training-process) 
+4. [Training Process](#training-process) 
 
-6. [Evaluation](#evaluation)
+5. [Evaluation](#evaluation)
 
-7. [Citation](#citation)
+6. [Citation](#citation)
 
-8. [Disclaimer](#disclaimer)
+7. [Disclaimer](#disclaimer)
 
 
 ## Overview
@@ -60,7 +60,7 @@ The high-level overview of our adversarial distillation framework, where we craf
 3) a _generation_ stage to produce new hard samples for escalating the challenges presented to the student model.
 
 
-## Online Demo
+<!-- ## Online Demo
 We will provide our latest models for you to try for as long as possible. You may ask some questions to Lion and we are happy to hear your feedback!
 
 [**Demo Link**](https://7fc72e99b01b79af.gradio.app/) (it will expire in 72 hours, so we regularly update the link)
@@ -73,7 +73,7 @@ Since the training data are English instruction-following examples, You'd better
 
 <p align="center">
   <img width="800" height="350" src="https://github.com/YJiangcm/Lion/blob/master/pics/chinese_case.png">
-</p>
+</p> -->
 
 
 ## Recovering Lion weights
