@@ -14,7 +14,8 @@
 [![Code License](https://img.shields.io/badge/code%20license-MIT-green)](https://github.com/YJiangcm/Lion/blob/master/LICENSE)
 [![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg)](https://github.com/tatsu-lab/stanford_alpaca/blob/main/DATA_LICENSE)
 [![Weight Diff License](https://img.shields.io/badge/Weight%20Diff%20License-CC%20By%20NC%204.0-yellow)](https://github.com/tatsu-lab/stanford_alpaca/blob/main/WEIGHT_DIFF_LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![Python](https://img.shields.io/badge/python-3.9+-blue?logo=python&logoColor=FED643)](https://www.python.org/downloads/)
+[![Pytorch](https://img.shields.io/badge/pytorch-1.13+-red?logo=pytorch)](https://pytorch.org/get-started/previous-versions/)
 
 <!-- The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes.  -->
 <!-- The weight diff is also CC BY NC 4.0 (allowing only non-commercial use). -->
