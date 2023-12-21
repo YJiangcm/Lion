@@ -273,25 +273,25 @@ We leverage GPT-4 to automatically assess the quality of responses (rated on a s
 Please cite our paper if you use the code in this repo.
 
 ```
-@article{DBLP:journals/corr/abs-2305-12870,
-  author       = {Yuxin Jiang and
-                  Chunkit Chan and
-                  Mingyang Chen and
-                  Wei Wang},
-  title        = {Lion: Adversarial Distillation of Closed-Source Large Language Model},
-  journal      = {CoRR},
-  volume       = {abs/2305.12870},
-  year         = {2023},
-  url          = {https://doi.org/10.48550/arXiv.2305.12870},
-  doi          = {10.48550/arXiv.2305.12870},
-  eprinttype    = {arXiv},
-  eprint       = {2305.12870},
-  timestamp    = {Fri, 26 May 2023 11:29:33 +0200},
-  biburl       = {https://dblp.org/rec/journals/corr/abs-2305-12870.bib},
-  bibsource    = {dblp computer science bibliography, https://dblp.org}
+@inproceedings{jiang-etal-2023-lion,
+    title = "Lion: Adversarial Distillation of Proprietary Large Language Models",
+    author = "Jiang, Yuxin  and
+      Chan, Chunkit  and
+      Chen, Mingyang  and
+      Wang, Wei",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.189",
+    doi = "10.18653/v1/2023.emnlp-main.189",
+    pages = "3134--3154",
 }
 ```
-
 
 
 
